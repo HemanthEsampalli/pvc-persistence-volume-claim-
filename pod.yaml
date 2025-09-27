@@ -1,0 +1,29 @@
+apiVersion: V1
+kind: pod
+metadata: 
+  name: mypvc-pod
+  lables: 
+    app: pv-pod
+spec: 
+  containers:
+    - name: mysql
+      image: mysql
+      ports:
+        - containerport : 3306
+      env: 
+        - name: MYSQL_ROOT_PASSWORD
+          value: rootroot
+        - name: MYSQL_DATABASE
+          value: templetedata
+        - name: MYSQL_USER
+          value: hemanth
+        - name: MYSQL_PASSWORD
+          value: admin@123
+      Volumemounts:
+        - mountpath: /var/lib/mysql
+          name: mysql data
+      volumes:
+        - persistentVolumeClaim:
+            claim name: pvc-ebs-po
+          name: mysql data 
+                   

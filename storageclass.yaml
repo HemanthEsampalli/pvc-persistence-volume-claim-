@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io
+kind: StorageClass
+metadata:
+  name: ebs-pv
+provisioner: ebs.csi.aws.com
+parameters:
+  type: "gp2"
+reclaimPolicy: retain
+volumeBindingMode: wait for first consumer
+

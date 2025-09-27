@@ -1,0 +1,14 @@
+apiVersion: V1
+kind: PersistentVolume
+metadata: 
+  name: pvc-ebs-po
+spec: 
+  storageClassName: ebs-sc
+  resources:
+    requests:
+      storage: sgi
+accessModes:
+  -Read write many:
+    selectors:
+      matchlables:
+        app: pv-pod
