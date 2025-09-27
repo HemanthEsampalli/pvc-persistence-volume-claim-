@@ -2,7 +2,7 @@ apiVersion: V1
 kind: pod
 metadata: 
   name: mypvc-pod
-  lables: 
+  label: 
     app: pv-pod
 spec: 
   containers:
